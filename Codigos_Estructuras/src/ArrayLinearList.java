@@ -65,6 +65,10 @@ public class ArrayLinearList<T> implements LinearList<T>, Iterable<T>{
         size++;
     }
     
+    public void add(T x){
+    	add(size, x);
+    }
+    
     public String toString(){
         StringBuilder s = new StringBuilder("[");
         for(T x: this)
