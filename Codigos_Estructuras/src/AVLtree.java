@@ -66,8 +66,10 @@ public class AVLtree<T extends Comparable<? super T>> implements SetSorted<T>{
                 node.setElement(getMin(node.getRightChild()));
                 node.setRightChild(remove(node.getRightChild(), node.getElement()));
             }
-            else node = (node.getLeftChild() != null) ? node.getLeftChild() : node.getRightChild();
-            size--;
+            else {
+            	node = (node.getLeftChild() != null) ? node.getLeftChild() : node.getRightChild();
+            	size--;
+            }
         }
         return balance(node);
     }

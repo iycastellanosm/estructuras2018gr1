@@ -85,8 +85,10 @@ public class MapTree<K extends Comparable<? super K>, E> implements MapSorted<K,
                 node.setElement(pollMin(node.getRightChild()));
                 node.setRightChild(remove(node.getRightChild(), node.getKey()));
             }
-            else node = (node.getLeftChild() != null) ? node.getLeftChild() : node.getRightChild();
-            size--;
+            else {
+            	node = (node.getLeftChild() != null) ? node.getLeftChild() : node.getRightChild();
+            	size--;
+            }
         }
         return balance(node);
     }
