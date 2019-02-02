@@ -1,28 +1,22 @@
-/**
- * Created by ivanc on 19/09/2017.
- */
-
 public class AVLnode<T> {
     T element;
-    AVLnode<T> leftChild;
-    AVLnode<T> rightChild;
+    AVLnode<T> leftChild, rightChild;
     int height;
 
     public AVLnode(){
         this(null, null, null);
     }
 
-    public AVLnode(T theElement){
-        this(theElement, null,null);
+    public AVLnode(T element){
+        this(element, null,null);
     }
 
-    public AVLnode(T theElement, AVLnode<T> theLeftChild, AVLnode<T> theRightChild){
-        element = theElement;
-        leftChild = theLeftChild;
-        rightChild = theRightChild;
-        height = 0; //no ha sido definido
+    public AVLnode(T element, AVLnode<T> leftChild, AVLnode<T> rightChild){
+    	this.element = element;
+        this.leftChild = leftChild;
+        this.rightChild = rightChild;
+        this.height = 1;
     }
-
 
     public AVLnode<T> getLeftChild(){
         return leftChild;
@@ -40,20 +34,20 @@ public class AVLnode<T> {
         return height;
     }
 
-    public void setLeftChild(AVLnode<T> theLeftChild){
-        leftChild = theLeftChild;
+    public void setLeftChild(AVLnode<T> leftChild){
+        this.leftChild = leftChild;
     }
 
-    public void setRightChild(AVLnode<T> theRightChild){
-        rightChild = theRightChild;
+    public void setRightChild(AVLnode<T> rightChild){
+        this.rightChild = rightChild;
     }
 
-    public void setElement(T theElement){
-        element = theElement;
+    public void setElement(T element){
+        this.element = element;
     }
 
-    public void setHeight(int theHeight){
-        height = theHeight;
+    public void setHeight(int height){
+        this.height = height;
     }
 
     @Override
